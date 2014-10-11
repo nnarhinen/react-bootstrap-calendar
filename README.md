@@ -14,6 +14,8 @@ Installation
 Usage
 -----
 
+Please use only the npm-installed version for now. I'm having troubles building an umdjs bundle: 
+substack/node-browserify#939
 ```js
 var Calendar = require('react-bootstrap-calendar').Calendar,
     React = require('react');
