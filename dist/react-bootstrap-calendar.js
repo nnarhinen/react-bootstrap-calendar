@@ -78,7 +78,9 @@ var Calendar = module.exports = React.createClass({displayName: 'exports',
   getInitialState: function() {
     var today = new Date();
     return {
-      month: today
+      month: today,
+      today: today,
+      selectedDate: this.props.selectedDate
     };
   },
   prevMonth: function(ev) {
@@ -108,13 +110,16 @@ var Calendar = module.exports = React.createClass({displayName: 'exports',
 
     var dayCallback = function(m) {
       return function(ev) {
+        self.setState({
+          selectedDate: m
+        });
         self.props.onDaySelected && self.props.onDaySelected(m);
       };
     };
 
 
     return (
-          Table(null, 
+          Table({className: "rbc-calendar"}, 
             React.DOM.thead(null, 
               React.DOM.tr(null, 
                 React.DOM.th({onClick: this.prevMonth}, React.DOM.i({className: "fa fa-arrow-left icon-arrow-left glyphicon glyphicon-arrow-left"})), 
@@ -136,7 +141,9 @@ var Calendar = module.exports = React.createClass({displayName: 'exports',
                 return (
                 React.DOM.tr({key: w[0].get('week')}, 
                  w.map(function(d) {
-                    return React.DOM.td({key: d.get('date'), onClick: dayCallback(d)},  d.get('date') );
+                    var cls = d.isSame(self.state.today, 'day') ? 'rbc-today' : '';
+                    if (self.state.selectedDate && d.isSame(self.state.selectedDate, 'day')) cls += ' rbc-selected-date';
+                    return React.DOM.td({className: cls, key: d.get('date'), onClick: dayCallback(d)},  d.get('date') );
                   }) 
                 )
                   );
@@ -157,8 +164,9 @@ module.exports.Calendar = Calendar;
 // might be https://github.com/substack/node-browserify/issues/939
 module.exports.React = require('react');
 module.exports.ReactBootstrap = require('react-bootstrap');
+module.exports.moment = require('moment');
 
-},{"./components/Calendar":2,"react":208,"react-bootstrap":55}],4:[function(require,module,exports){
+},{"./components/Calendar":2,"moment":5,"react":208,"react-bootstrap":55}],4:[function(require,module,exports){
 (function(root, factory) {
     if(typeof exports === 'object') {
         module.exports = factory(require('moment'));

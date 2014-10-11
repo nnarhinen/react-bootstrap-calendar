@@ -12,7 +12,9 @@ var Calendar = module.exports = React.createClass({
   getInitialState: function() {
     var today = new Date();
     return {
-      month: today
+      month: today,
+      today: today,
+      selectedDate: this.props.selectedDate
     };
   },
   prevMonth: function(ev) {
@@ -42,13 +44,16 @@ var Calendar = module.exports = React.createClass({
 
     var dayCallback = function(m) {
       return function(ev) {
+        self.setState({
+          selectedDate: m
+        });
         self.props.onDaySelected && self.props.onDaySelected(m);
       };
     };
 
 
     return (
-          <Table>
+          <Table className="rbc-calendar">
             <thead>
               <tr>
                 <th onClick={this.prevMonth}><i className="fa fa-arrow-left icon-arrow-left glyphicon glyphicon-arrow-left"></i></th>
@@ -70,7 +75,9 @@ var Calendar = module.exports = React.createClass({
                 return (
                 <tr key={w[0].get('week')}>
                 { w.map(function(d) {
-                    return <td key={d.get('date')} onClick={dayCallback(d)}>{ d.get('date') }</td>;
+                    var cls = d.isSame(self.state.today, 'day') ? 'rbc-today' : '';
+                    if (self.state.selectedDate && d.isSame(self.state.selectedDate, 'day')) cls += ' rbc-selected-date';
+                    return <td className={cls} key={d.get('date')} onClick={dayCallback(d)}>{ d.get('date') }</td>;
                   }) }
                 </tr>
                   );

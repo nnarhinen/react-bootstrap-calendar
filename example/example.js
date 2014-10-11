@@ -16,7 +16,7 @@
     render: function() {
       return (
           <div>
-            <Calendar onDaySelected={this.daySelected} />
+            <Calendar onDaySelected={this.daySelected} selectedDate={ReactBootstrapCalendar.moment().add(5, 'days')} />
             <Popover placement='top' positionLeft={300} positionTop={300}><Calendar /></Popover>
             <OverlayTrigger trigger="click" overlay={<Popover placement="top"><Calendar /></Popover>}>
               <Button>Open calendar</Button>

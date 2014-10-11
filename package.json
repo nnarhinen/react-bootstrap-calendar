@@ -1,10 +1,14 @@
 {
   "name": "react-bootstrap-calendar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A calendar component using react-bootstrap",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nnarhinen/react-bootstrap-calendar.git"
   },
   "keywords": [
     "react",
@@ -33,6 +37,7 @@
     "uglifyify": "~2.5.0",
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-exec": "~0.4.6"
+    "grunt-exec": "~0.4.6",
+    "stylus": "~0.49.1"
   }
 }
