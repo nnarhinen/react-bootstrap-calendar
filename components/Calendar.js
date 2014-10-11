@@ -3,7 +3,6 @@
  */
 
 var React = require('react'),
-    Table = require('react-bootstrap').Table,
     moment = require('moment');
 
 require('moment-range');
@@ -53,7 +52,7 @@ var Calendar = module.exports = React.createClass({
 
 
     return (
-          <Table className="rbc-calendar">
+          <table className="rbc-calendar table">
             <thead>
               <tr>
                 <th onClick={this.prevMonth}><i className="fa fa-arrow-left icon-arrow-left glyphicon glyphicon-arrow-left"></i></th>
@@ -83,7 +82,7 @@ var Calendar = module.exports = React.createClass({
                   );
               }) }
             </tbody>
-          </Table>
+          </table>
        );
 
   }

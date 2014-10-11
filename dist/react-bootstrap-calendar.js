@@ -69,7 +69,6 @@ process.chdir = function (dir) {
  */
 
 var React = require('react'),
-    Table = require('react-bootstrap').Table,
     moment = require('moment');
 
 require('moment-range');
@@ -119,7 +118,7 @@ var Calendar = module.exports = React.createClass({displayName: 'exports',
 
 
     return (
-          Table({className: "rbc-calendar"}, 
+          React.DOM.table({className: "rbc-calendar table"}, 
             React.DOM.thead(null, 
               React.DOM.tr(null, 
                 React.DOM.th({onClick: this.prevMonth}, React.DOM.i({className: "fa fa-arrow-left icon-arrow-left glyphicon glyphicon-arrow-left"})), 
@@ -155,7 +154,7 @@ var Calendar = module.exports = React.createClass({displayName: 'exports',
   }
 });
 
-},{"moment":5,"moment-range":4,"react":208,"react-bootstrap":55}],3:[function(require,module,exports){
+},{"moment":5,"moment-range":4,"react":208}],3:[function(require,module,exports){
 var Calendar = require('./components/Calendar');
 
 module.exports.Calendar = Calendar;

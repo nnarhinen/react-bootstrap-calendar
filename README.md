@@ -1,7 +1,7 @@
 react-bootstrap-calendar
 ========================
 
-A calendar component using react-bootstrap
+A calendar component with built-in styles for bootstrap
 
 Live demo: http://cdn.rawgit.com/nnarhinen/react-bootstrap-calendar/master/example/index.html
 Source of demo: [example.js](example/example.js)
