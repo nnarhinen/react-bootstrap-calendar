@@ -15,7 +15,8 @@
   "author": "Niklas Närhinen <niklas@narhinen.net>",
   "license": "MIT",
   "dependencies": {
-    "node-calendar": "~0.1.4"
+    "moment": "~2.8.3",
+    "moment-range": "~1.0.5"
   },
   "peerDependencies": {
     "react-bootstrap": "~0.12.0",
