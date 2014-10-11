@@ -4,6 +4,7 @@ react-bootstrap-calendar
 A calendar component using react-bootstrap
 
 Live demo: http://cdn.rawgit.com/nnarhinen/react-bootstrap-calendar/master/example/index.html
+Source of demo: [example/example.js]
 
 Installation
 ------------
