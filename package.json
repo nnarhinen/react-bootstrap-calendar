@@ -1,0 +1,34 @@
+{
+  "name": "react-bootstrap-calendar",
+  "version": "0.0.1",
+  "description": "A calendar component using react-bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react-bootstrap",
+    "calendar",
+    "datepicker"
+  ],
+  "author": "Niklas Närhinen <niklas@narhinen.net>",
+  "license": "MIT",
+  "dependencies": {
+    "node-calendar": "~0.1.4"
+  },
+  "peerDependencies": {
+    "react-bootstrap": "~0.12.0",
+    "react": "~0.11.2"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
+  "devDependencies": {
+    "browserify": "~6.0.3",
+    "reactify": "~0.14.0",
+    "uglifyify": "~2.5.0"
+  }
+}
